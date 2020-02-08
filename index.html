@@ -1,0 +1,126 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Szymon Bluma">
+    <title>ESPEasy Relay Tester</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <meta name="theme-color" content="#563d7c">
+    <link href="site.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>ESPEasy Relay Tester</h2>
+        <p class="lead">This tester allow you to send high and low signal on a GPIO over HTTP</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Console</span>
+            </h4>
+            <pre style="background-color:#e9ecef;min-width:350px;min-height:150px;padding:15px;"><code id="console"></code></pre>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <div class="mb-3">
+                <label for="host">Main address</label>
+                <input type="text" class="form-control" id="host" value="http://192.168.5.244" placeholder="http://192.168.0.100">
+            </div>
+
+            <hr class="mb-4">
+
+            <table class="table table-sm table-borderless table-hover">
+                <tbody>
+                <tr data-gpio="0">
+                    <td>GPIO-0 (D3)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="1">
+                    <td>GPIO-1 (D10)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="2">
+                    <td>GPIO-2 (D4)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="3">
+                    <td>GPIO-3 (D9)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="4">
+                    <td>GPIO-4 (D2)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="5">
+                    <td>GPIO-5 (D1)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="9">
+                    <td>GPIO-9 (D11)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="10">
+                    <td>GPIO-10 (D12)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="12">
+                    <td>GPIO-12 (D6)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="13">
+                    <td>GPIO-13 (D7)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="14">
+                    <td>GPIO-14 (D5)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="15">
+                    <td>GPIO-15 (D8)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                <tr data-gpio="16">
+                    <td>GPIO-16 (D0)</td>
+                    <td><button type="button" class="btn btn-success btn-sm onoff" value="1">ON</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm onoff" value="0">OFF</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <hr class="mb-4">
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 Szymon [blumanos] Bluma</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="site.js"></script></body>
+</html>
